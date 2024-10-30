@@ -5,12 +5,15 @@ import socket from "./socketService";
 import LobbyCreation from "./LobbyCreation";
 import LobbyJoin from "./LobbyJoin";
 import Lobby from "./Lobby";
+import Draft from "./Draft";
+import "./css/index.css";
 
 const App = () => {
   const [currentView, setCurrentView] = useState("home");
   const [lobbyCode, setLobbyCode] = useState("");
   const [userName, setUserName] = useState("");
   const [users, setUsers] = useState([]);
+  const [draftState, setDraftState] = useState({});
 
   const navCreateLobby = () => {
     console.log("Navigating to Create Lobby");
@@ -34,6 +37,13 @@ const App = () => {
     setUsers(users);
     setUserName(userName);
     setCurrentView("lobby");
+  };
+
+  const handleDraftStarted = (lobbyCode, draftState, users) => {
+    setLobbyCode(lobbyCode);
+    setUsers(users);
+    setDraftState(draftState);
+    setCurrentView("draft");
   };
 
   useEffect(() => {
@@ -69,7 +79,15 @@ const App = () => {
         <LobbyJoin onLobbyJoined={handleLobbyJoined} />
       )}
       {currentView == "lobby" && (
-        <Lobby lobbyCode={lobbyCode} userName={userName} userList={users} />
+        <Lobby
+          lobbyCode={lobbyCode}
+          userName={userName}
+          userList={users}
+          onDraftStart={handleDraftStarted}
+        />
+      )}
+      {currentView == "draft" && (
+        <Draft lobbyCode={lobbyCode} draftState={draftState} users={users} />
       )}
     </div>
   );

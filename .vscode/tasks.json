@@ -1,0 +1,97 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Start Server",
+      "type": "shell",
+      "command": "cd server && npm run dev",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "server"
+      }
+    },
+    {
+      "label": "Start Client 1",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start Client 2",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start Client 3",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start Client 4",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start Client 5",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start Client 6",
+      "type": "shell",
+      "command": "npm start",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "clients"
+      }
+    },
+    {
+      "label": "Start All Terminals",
+      "dependsOn": [
+        "Start Server",
+        "Start Client 1",
+        "Start Client 2",
+        "Start Client 3",
+        "Start Client 4",
+        "Start Client 5",
+        "Start Client 6"
+      ],
+      "runOptions": {
+        "runOn": "default"
+      }
+    }
+  ],
+
+  "groups": {
+    "server": {
+      "isDefault": true
+    },
+    "clients": {}
+  }
+}

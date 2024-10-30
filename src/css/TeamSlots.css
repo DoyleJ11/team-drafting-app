@@ -1,0 +1,54 @@
+/* TeamSlots.css */
+
+.teams-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.team-container {
+  width: 20%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .team-container h3 {
+  margin-bottom: 10px;
+} */
+
+.slot {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #ccc;
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot.current-turn {
+  border-color: #ffcc00;
+}
+
+.slot.my-turn {
+  background-color: #fff8e1;
+}
+
+.user-name {
+  position: absolute;
+  top: -20px;
+  font-weight: bold;
+}
+
+.champion-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.placeholder {
+  font-size: 0.9rem;
+  color: #777;
+}

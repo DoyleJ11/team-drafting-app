@@ -1,0 +1,45 @@
+/* Draft.css */
+
+.draft-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.center-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  padding: 0 30px; /* Add horizontal padding of 30px on each side */
+}
+
+.center-content h2 {
+  margin-top: 20px;
+}
+
+.lock-in-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.lock-in-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.lock-in-button:not(:disabled):hover {
+  background-color: #0056b3;
+}
